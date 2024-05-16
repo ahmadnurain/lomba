@@ -1,0 +1,118 @@
+/* Animasi dot pertama */
+@keyframes float-1 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float-1 {
+  animation: float-1 3s ease-in-out infinite;
+}
+
+/* Animasi dot kedua */
+@keyframes float-2 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(-20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float-2 {
+  animation: float-2 3s ease-in-out infinite;
+}
+
+/* Animasi dot ketiga */
+@keyframes float-3 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(20px) translateX(20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float-3 {
+  animation: float-3 3s ease-in-out infinite;
+}
+
+/* Animasi dot keempat */
+@keyframes float-4 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(20px) translateX(-20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float-4 {
+  animation: float-4 3s ease-in-out infinite;
+}
+
+/* Animasi dot kelima */
+@keyframes float-5 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(20px) translateX(0);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float-5 {
+  animation: float-5 3s ease-in-out infinite;
+}
+
+/* Animasi dot keenam */
+@keyframes float-6 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float-6 {
+  animation: float-6 3s ease-in-out infinite;
+}
+
+/* Animasi dot ketujuh */
+@keyframes float-7 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(0) translateX(-20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float-7 {
+  animation: float-7 3s ease-in-out infinite;
+}

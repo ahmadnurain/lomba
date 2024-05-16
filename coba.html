@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar dengan Tailwind CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container mx-auto">
+      <div class="flex justify-between">
+        <img src="../public/asset/logo.png" alt="logo" class="lg:w-14 w-12" />
+        <div class="flex">
+          <div class="flex md:gap-5 items-center">
+            <!-- start navbar windows tablet -->
+            <div class="hidden md:block" id="navbar">
+              <ul class="flex flex-row gap-9 font-semibold pr-4 text-slate-600">
+                <li>
+                  <a href="#" class="hover:text-orange-400 transition duration-200 ease-in-out cursor-pointer">Home</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-orange-400 transition duration-200 ease-in-out cursor-pointer">About</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-orange-400 transition duration-200 ease-in-out cursor-pointer">Menu</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-orange-400 transition duration-200 ease-in-out cursor-pointer">Testimoni</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-orange-400 transition duration-200 ease-in-out cursor-pointer">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end navbar windows tablet -->
+            <div class="flex items-center lg:gap-6">
+              <span class="border-l-2 p-2 border-slate-300 md:block">
+                <ion-icon name="sunny-outline" class="flex lg:text-3xl md:text-2xl md:pr-1 text-xl sm:pr-8 lg:pl-3 items-center"></ion-icon>
+              </span>
+              <button id="openSidebarBtn" class="lg:px-5 lg:py-2 px-3 py-1 bg-orange-400 rounded-full font-bold text-white text-sm mr-2 cursor-pointer z-50 hover:bg-orange-500 duration-200">Open Sidebar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex h-screen bg-gray-200">
+      <!-- Overlay untuk menutupi layar saat sidebar dibuka -->
+      <div class="fixed inset-0 bg-white opacity-75 backdrop-blur-lg hidden" id="overlay"></div>
+      <!-- Sidebar -->
+      <aside class="bg-gray-800 w-80 h-full fixed left-0 top-0 transform -translate-x-full transition-transform ease-in-out duration-300" id="sidebar">
+        <div class="flex items-center justify-between px-4 py-6">
+          <span class="text-lg font-semibold text-gray-200">Sidebar</span>
+          <!-- Tombol untuk menutup sidebar -->
+          <button id="closeSidebarBtn" class="text-gray-400 focus:outline-none hover:text-white">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Isi sidebar -->
+        <nav>
+          <ul class="mt-6">
+            <li class="px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Menu 1</li>
+            <li class="px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Menu 2</li>
+            <li class="px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Menu 3</li>
+            <li class="px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Menu 4</li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- Konten -->
+      <div class="flex-1">
+        <div class="p-6">
+          <h1 class="text-2xl font-semibold text-gray-800">Konten Utama</h1>
+          <p class="mt-2 text-gray-600">Ini adalah konten utama.</p>
+          <img src="https://th.bing.com/th/id/OIP.zqSrQMzIkCb8JK17iN81FwHaE8?rs=1&pid=ImgDetMain" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+      const openSidebarBtn = document.getElementById("openSidebarBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+
+      closeSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-0");
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.remove("block");
+        overlay.classList.add("hidden");
+      });
+
+      openSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-full");
+        sidebar.classList.add("-translate-x-0");
+        overlay.classList.remove("hidden");
+        overlay.classList.add("block");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-0");
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.remove("block");
+        overlay.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
